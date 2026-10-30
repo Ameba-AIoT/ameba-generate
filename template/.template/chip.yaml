@@ -1,0 +1,11 @@
+type: category
+name: chip
+display_name: "Chip"
+help: "Select the target Ameba SoC."
+options:
+  - type: option
+    name: rtl8721f
+    display_name: "RTL8721F"
+    selection_group: chip
+    sets:
+      rust_target: thumbv8m.main-none-eabi

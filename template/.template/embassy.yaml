@@ -1,0 +1,4 @@
+type: option
+name: embassy
+display_name: "Embassy (async runtime)"
+help: "Adds embassy-executor and embassy-time for async/await support."

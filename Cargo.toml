@@ -1,0 +1,27 @@
+[package]
+name    = "ameba-generate"
+version = "0.1.0"
+edition = "2024"
+description = "Project generating tool for Ameba Rust SDK"
+license = "Apache-2.0"
+repository = "https://github.com/Ameba-AIoT/ameba-generate"
+
+[[bin]]
+name = "ameba-generate"
+path = "src/main.rs"
+
+[dependencies]
+anyhow     = "1"
+clap       = { version = "4", features = ["derive"] }
+serde      = { version = "1", features = ["derive"] }
+serde_yaml = "0.9"
+indexmap   = { version = "2", features = ["serde"] }
+walkdir    = "2"
+taplo      = "0.14"
+ratatui    = "0.30"
+crossterm  = "0.29"
+
+[build-dependencies]
+walkdir     = "2"
+quote       = "1"
+proc-macro2 = "1"

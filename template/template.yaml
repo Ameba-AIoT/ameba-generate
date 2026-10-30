@@ -1,0 +1,7 @@
+required:
+  - chip
+
+options:
+  - !include .template/chip.yaml
+  - !include .template/embassy.yaml
+  - !include .template/wifi.yaml

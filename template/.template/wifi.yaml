@@ -1,0 +1,12 @@
+type: option
+name: wifi
+display_name: "Wi-Fi (ameba-wifi, STA bring-up)"
+help: >-
+  Adds the ameba-wifi dependency and brings Wi-Fi up in STA mode at startup
+  (WHC handlers, background task, wifi_on). Connecting to an AP is left to
+  you — see the SDK's examples/wifi-connect.
+requires:
+  - embassy
+compatible:
+  chip:
+    - rtl8721f

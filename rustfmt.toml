@@ -1,0 +1,15 @@
+# Must match the `edition` declared by this crate's Cargo.toml. This tells
+# rustfmt which grammar to parse with — it does not select an edition for the
+# code. Setting it also pins `style_edition` to the same value.
+#
+# `cargo fmt` reads the edition from Cargo.toml and passes `--edition` itself,
+# so this file is a no-op for it. It matters for anything that invokes rustfmt
+# directly (editor format-on-save, pre-commit hooks): bare rustfmt does not
+# read Cargo.toml and would otherwise default to the 2015 style guide, which
+# sorts imports differently and would fight `cargo fmt --check`.
+#
+# No unstable options here: rustfmt only honours those on nightly, and on
+# stable it prints a warning and silently ignores them, so a config full of
+# them would look effective while doing nothing. The toolchain is rolling
+# `stable` (see rust-toolchain.toml), so only stable options may be used.
+edition = "2024"

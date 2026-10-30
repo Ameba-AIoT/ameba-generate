@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members  = ["app"]
+
+# Shared release profile for all workspace members.
+[profile.release]
+panic         = "abort"
+lto           = false
+opt-level     = "z"
+codegen-units = 1
+debug         = false
+strip         = "none"
+
+[profile.dev]
+panic     = "abort"
+opt-level = "z"

@@ -1,0 +1,11 @@
+[build]
+target = "{{rust_target}}"
+
+[target.{{rust_target}}]
+linker    = "rust-lld"
+runner    = "ameba-flash flash --monitor"
+rustflags = [
+    "-Clink-arg=-Tameba.x",
+    "-Clink-arg=--gc-sections",
+    "-Clink-arg=--nmagic",
+]
