@@ -1,6 +1,15 @@
+<div align="center">
+
 # ameba-generate
 
-Project generating tool for the Ameba Rust SDK.
+**Project generating tool for the Ameba Rust SDK.**
+
+[![Language](https://badgen.net/badge/language/Rust/orange)](https://github.com/Ameba-AIoT/ameba-generate/search?l=rust)
+[![License](https://badgen.net/badge/License/Apache%202.0/lightgrey)](LICENSE)
+[![Last Commit](https://badgen.net/github/last-commit/Ameba-AIoT/ameba-generate/main?icon=github)](https://github.com/Ameba-AIoT/ameba-generate/commits/main)
+
+</div>
+
 Generates a ready-to-compile, ready-to-package bare-metal Rust application in one command.
 
 ## Install
@@ -38,7 +47,7 @@ ameba-generate list-options
 # 1. Generate a project (interactive TUI)
 ameba-generate
 
-# 2. Input project name, select chip + features, press g to generate
+# 2. Input project name and SDK path, select chip + features, press g to generate
 
 # 3. Build (must run from app/ subdirectory)
 cd my-app/app

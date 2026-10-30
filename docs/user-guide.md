@@ -52,7 +52,7 @@ ameba-generate --version
 # 1. Generate a project (interactive TUI)
 ameba-generate
 
-# 2. Enter the project name when prompted, select chip + features in the menu, press g to generate
+# 2. Enter the project name and SDK path when prompted, select chip + features in the menu, press g to generate
 
 # 3. Build (note: run from the app/ subdirectory)
 cd my-app/app
@@ -74,20 +74,28 @@ cd my-app/app && cargo run --release -- --port <PORT>    # build + package + fla
 
 ## 3. Interactive TUI Mode
 
-Run with no arguments, or with just a project name:
+Run with no arguments:
 
 ```bash
 ameba-generate
-# or
-ameba-generate my-app
 ```
 
 ### Flow
 
-**Step 1**: enter a project name (if not passed as an argument)
+**Step 1**: enter a project name and the Ameba Rust SDK path
 
 ```
 Project name: my-app
+SDK path:     /path/to/rust
+```
+
+To skip typing the SDK path, pass it with `--sdk`. The prompt shows it as the
+default and pressing Enter accepts it:
+
+```
+$ ameba-generate --sdk /path/to/rust
+Project name: my-app
+SDK path [/path/to/rust]:
 ```
 
 **Step 2**: select options in the full-screen menu
@@ -133,6 +141,9 @@ Project name: my-app
 ## 4. Command-Line (Headless) Mode
 
 For CI environments, scripted invocations, or when you don't want the TUI.
+Headless mode is entered automatically outside a TTY, explicitly with
+`--headless`, or whenever a project name or any `-o` option is passed — in
+that case `--sdk` is required.
 
 ```bash
 ameba-generate --sdk <SDK_PATH> -o <OPTION>... [--headless] <NAME>
